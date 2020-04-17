@@ -1,0 +1,469 @@
+10E|Tenth Edition|Core Set
+2ED|Unlimited Edition|Core Set
+3ED|Revised Edition|Core Set
+4BB|Fourth Edition Foreign Black Border|
+4ED|Fourth Edition|Core Set
+5DN|Fifth Dawn|Mirrodin
+5ED|Fifth Edition|Core Set
+6ED|Classic Sixth Edition|Core Set
+7ED|Seventh Edition|Core Set
+8ED|Eighth Edition|Core Set
+9ED|Ninth Edition|Core Set
+A25|Masters 25|
+AER|Aether Revolt|Kaladesh
+AKH|Amonkhet|Amonkhet
+ALA|Shards of Alara|Alara
+ALL|Alliances|Ice Age
+AMH1|Modern Horizons Art Series|
+ANA|Arena New Player Experience|
+APC|Apocalypse|Invasion
+ARB|Alara Reborn|Alara
+ARC|Archenemy|
+ARN|Arabian Nights|
+ATH|Anthologies|
+ATQ|Antiquities|
+CST|Coldsnap Theme Decks|Ice Age
+AVR|Avacyn Restored|Innistrad
+BBD|Battlebond|
+BFZ|Battle for Zendikar|Battle for Zendikar
+BNG|Born of the Gods|Theros
+BOK|Betrayers of Kamigawa|Kamigawa
+BRB|Battle Royale Box Set|
+BTD|Beatdown Box Set|
+C13|Commander 2013|Commander
+C14|Commander 2014|Commander
+C15|Commander 2015|Commander
+C16|Commander 2016|Commander
+C17|Commander 2017|Commander
+C18|Commander 2018|Commander
+C19|Commander 2019|Commander
+CED|Collectors’ Edition|
+CEI|Intl. Collectors’ Edition|
+CHK|Champions of Kamigawa|Kamigawa
+CHR|Chronicles|
+CM1|Commander's Arsenal|Commander
+CM2|Commander Anthology Volume II|Commander
+CMA|Commander Anthology|Commander
+CMB1|Mystery Booster Playtest Cards|
+CMD|Commander 2011|Commander
+CN2|Conspiracy: Take the Crown|
+CNS|Conspiracy|
+CON|Conflux|Alara
+CP1|Magic 2015 Clash Pack|
+CP2|Fate Reforged Clash Pack|Khans of Tarkir
+CP3|Magic Origins Clash Pack|
+CSP|Coldsnap|Ice Age
+DD1|Duel Decks: Elves vs. Goblins|
+DD2|Duel Decks: Jace vs. Chandra|
+DDC|Duel Decks: Divine vs. Demonic|
+DDD|Duel Decks: Garruk vs. Liliana|
+DDE|Duel Decks: Phyrexia vs. the Coalition|
+DDF|Duel Decks: Elspeth vs. Tezzeret|
+DDG|Duel Decks: Knights vs. Dragons|
+DDH|Duel Decks: Ajani vs. Nicol Bolas|
+DDI|Duel Decks: Venser vs. Koth|
+DDJ|Duel Decks: Izzet vs. Golgari|
+DDK|Duel Decks: Sorin vs. Tibalt|
+DDL|Duel Decks: Heroes vs. Monsters|
+DDM|Duel Decks: Jace vs. Vraska|
+DDN|Duel Decks: Speed vs. Cunning|
+DDO|Duel Decks: Elspeth vs. Kiora|
+DDP|Duel Decks: Zendikar vs. Eldrazi|
+DDQ|Duel Decks: Blessed vs. Cursed|
+DDR|Duel Decks: Nissa vs. Ob Nixilis|
+DDS|Duel Decks: Mind vs. Might|
+DDT|Duel Decks: Merfolk vs. Goblins|
+DDU|Duel Decks: Elves vs. Inventors|
+DGM|Dragon's Maze|Return to Ravnica
+DIS|Dissension|Ravnica
+DKA|Dark Ascension|Innistrad
+DKM|Deckmasters|
+DOM|Dominaria|
+DPA|Duels of the Planeswalkers|
+DRB|From the Vault: Dragons|
+DRK|The Dark|
+DST|Darksteel|Mirrodin
+DTK|Dragons of Tarkir|Khans of Tarkir
+DVD|Duel Decks Anthology: Divine vs. Demonic|
+E01|Archenemy: Nicol Bolas|
+E02|Explorers of Ixalan|
+ELD|Throne of Eldraine|
+EMA|Eternal Masters|
+EMN|Eldritch Moon|Shadows over Innistrad
+EVE|Eventide|Shadowmoor
+EVG|Duel Decks Anthology: Elves vs. Goblins|
+EXO|Exodus|Tempest
+EXP|Zendikar Expeditions|Battle for Zendikar
+F01|Friday Night Magic 2001|Friday Night Magic
+F02|Friday Night Magic 2002|Friday Night Magic
+F03|Friday Night Magic 2003|Friday Night Magic
+F04|Friday Night Magic 2004|Friday Night Magic
+F05|Friday Night Magic 2005|Friday Night Magic
+F06|Friday Night Magic 2006|Friday Night Magic
+F07|Friday Night Magic 2007|Friday Night Magic
+F08|Friday Night Magic 2008|Friday Night Magic
+F09|Friday Night Magic 2009|Friday Night Magic
+F10|Friday Night Magic 2010|Friday Night Magic
+F11|Friday Night Magic 2011|Friday Night Magic
+F12|Friday Night Magic 2012|Friday Night Magic
+F13|Friday Night Magic 2013|Friday Night Magic
+F14|Friday Night Magic 2014|Friday Night Magic
+F15|Friday Night Magic 2015|Friday Night Magic
+F16|Friday Night Magic 2016|Friday Night Magic
+F17|Friday Night Magic 2017|Friday Night Magic
+F18|Friday Night Magic 2018|Friday Night Magic
+FBB|Foreign Black Border|Core Set
+FEM|Fallen Empires|
+FNM|Friday Night Magic 2000|Friday Night Magic
+FRF|Fate Reforged|Khans of Tarkir
+HTR|2016 Heroes of the Realm|
+FUT|Future Sight|Time Spiral
+G00|Judge Gift Cards 2000|Judge Gift Cards
+G01|Judge Gift Cards 2001|Judge Gift Cards
+G02|Judge Gift Cards 2002|Judge Gift Cards
+G03|Judge Gift Cards 2003|Judge Gift Cards
+G04|Judge Gift Cards 2004|Judge Gift Cards
+G05|Judge Gift Cards 2005|Judge Gift Cards
+G06|Judge Gift Cards 2006|Judge Gift Cards
+G07|Judge Gift Cards 2007|Judge Gift Cards
+G08|Judge Gift Cards 2008|Judge Gift Cards
+G09|Judge Gift Cards 2009|Judge Gift Cards
+G10|Judge Gift Cards 2010|Judge Gift Cards
+G11|Judge Gift Cards 2011|Judge Gift Cards
+G17|2017 Gift Pack|
+G18|M19 Gift Pack|
+G99|Judge Gift Cards 1999|Judge Gift Cards
+GK1|GRN Guild Kit|
+GK2|RNA Guild Kit|
+GN2|Game Night 2019|
+GNT|Game Night|
+GPT|Guildpact|Ravnica
+GRN|Guilds of Ravnica|Guilds of Ravnica
+GS1|Global Series Jiang Yanggu & Mu Yanling|
+GTC|Gatecrash|Return to Ravnica
+GVL|Duel Decks Anthology: Garruk vs. Liliana|
+H09|Premium Deck Series: Slivers|
+H17|HasCon 2017|
+HA1|Historic Anthology 1|
+HHO|Happy Holidays|
+HML|Homelands|
+HOP|Planechase|
+HOU|Hour of Devastation|Amonkhet
+HTR17|2017 Heroes of the Realm|
+HTR18|Heroes of the Realm 2018|
+ICE|Ice Age|Ice Age
+IMA|Iconic Masters|
+INV|Invasion|Invasion
+ISD|Innistrad|Innistrad
+ITP|Introductory Two-Player Set|
+J12|Judge Gift Cards 2012|Judge Gift Cards
+J13|Judge Gift Cards 2013|Judge Gift Cards
+J14|Judge Gift Cards 2014|Judge Gift Cards
+J15|Judge Gift Cards 2015|Judge Gift Cards
+J16|Judge Gift Cards 2016|Judge Gift Cards
+J17|Judge Gift Cards 2017|Judge Gift Cards
+J18|Judge Gift Cards 2018|Judge Gift Cards
+J19|Judge Gift Cards 2019|Judge Gift Cards
+J20|Judge Gift Cards 2020|Judge Gift Cards
+JGP|Judge Gift Cards 1998|Judge Gift Cards
+JOU|Journey into Nyx|Theros
+JUD|Judgment|Odyssey
+JVC|Duel Decks Anthology: Jace vs. Chandra|
+KLD|Kaladesh|Kaladesh
+KTK|Khans of Tarkir|Khans of Tarkir
+L12|League Tokens 2012|
+L13|League Tokens 2013|
+L14|League Tokens 2014|
+L15|League Tokens 2015|
+L16|League Tokens 2016|
+L17|League Tokens 2017|
+LEA|Limited Edition Alpha|Core Set
+LEB|Limited Edition Beta|Core Set
+LEG|Legends|
+LGN|Legions|Onslaught
+LRW|Lorwyn|Lorwyn
+M10|Magic 2010|Core Set
+M11|Magic 2011|Core Set
+M12|Magic 2012|Core Set
+M13|Magic 2013|Core Set
+M14|Magic 2014|Core Set
+M15|Magic 2015|Core Set
+M19|Core Set 2019|Core Set
+M20|Core Set 2020|Core Set
+MB1|Mystery Booster|
+MBS|Mirrodin Besieged|Scars of Mirrodin
+MD1|Modern Event Deck 2014|
+ME1|Masters Edition|
+ME2|Masters Edition II|
+ME3|Masters Edition III|
+ME4|Masters Edition IV|
+MED|Mythic Edition|
+MGB|Multiverse Gift Box|
+MH1|Modern Horizons|
+MIR|Mirage|Mirage
+MM2|Modern Masters 2015|
+MM3|Modern Masters 2017|
+MMA|Modern Masters|
+MMQ|Mercadian Masques|Masques
+MOR|Morningtide|Lorwyn
+MP2|Amonkhet Invocations|Amonkhet
+MPR|Magic Player Rewards 2001|Magic Player Rewards
+MPS|Kaladesh Inventions|Kaladesh
+MRD|Mirrodin|Mirrodin
+NEM|Nemesis|Masques
+NPH|New Phyrexia|Scars of Mirrodin
+OARC|Archenemy Schemes|
+OC13|Commander 2013 Oversized|Commander
+OC14|Commander 2014 Oversized|Commander
+OC15|Commander 2015 Oversized|Commander
+OC16|Commander 2016 Oversized|Commander
+OC17|Commander 2017 Oversized|Commander
+OC18|Commander 2018 Oversized|Commander
+OC19|Commander 2019 Oversized|
+OCM1|Commander's Arsenal Oversized|Commander
+OCMD|Commander 2011 Oversized|Commander
+ODY|Odyssey|Odyssey
+OE01|Archenemy: Nicol Bolas Schemes|
+OGW|Oath of the Gatewatch|Battle for Zendikar
+OHOP|Planechase Planes|
+OLGC|Legacy Championship|
+ONS|Onslaught|Onslaught
+OPC2|Planechase 2012 Planes|
+OPCA|Planechase Anthology Planes|
+ORI|Magic Origins|Core Set
+OVNT|Vintage Championship|
+P02|Portal Second Age|
+P03|Magic Player Rewards 2003|Magic Player Rewards
+P04|Magic Player Rewards 2004|Magic Player Rewards
+P05|Magic Player Rewards 2005|Magic Player Rewards
+P06|Magic Player Rewards 2006|Magic Player Rewards
+P07|Magic Player Rewards 2007|Magic Player Rewards
+P08|Magic Player Rewards 2008|Magic Player Rewards
+P09|Magic Player Rewards 2009|Magic Player Rewards
+P10|Magic Player Rewards 2010|Magic Player Rewards
+P10E|Tenth Edition Promos|
+P11|Magic Player Rewards 2011|Magic Player Rewards
+P15A|15th Anniversary Cards|
+P2HG|Two-Headed Giant Tournament|
+PAER|Aether Revolt Promos|Kaladesh
+PAKH|Amonkhet Promos|Amonkhet
+PAL00|Arena League 2000|Arena League
+PAL01|Arena League 2001|Arena League
+PAL02|Arena League 2002|Arena League
+PAL03|Arena League 2003|Arena League
+PAL04|Arena League 2004|Arena League
+PAL05|Arena League 2005|Arena League
+PAL06|Arena League 2006|Arena League
+PAL99|Arena League 1999|Arena League
+PALP|Asia Pacific Land Program|
+PANA|MTG Arena Promos|
+PARC|Promotional Schemes|
+PARL|Arena League 1996|Arena League
+PAVR|Avacyn Restored Promos|Innistrad
+PBBD|Battlebond Promos|
+PBFZ|Battle for Zendikar Promos|Battle for Zendikar
+PBNG|Born of the Gods Promos|Theros
+PBOK|Miscellaneous Book Promos|
+PC2|Planechase 2012|
+PCA|Planechase Anthology|
+PCEL|Celebration Cards|
+PCMD|Commander 2011 Launch Party|Commander
+PCMP|Champs and States|
+PCY|Prophecy|Masques
+PD2|Premium Deck Series: Fire and Lightning|
+PD3|Premium Deck Series: Graveborn|
+PDGM|Dragon's Maze Promos|Return to Ravnica
+PDKA|Dark Ascension Promos|Innistrad
+PDOM|Dominaria Promos|
+PDP10|Duels of the Planeswalkers Promos 2010|
+PDP11|Duels of the Planeswalkers Promos 2011|
+PDP12|Duels of the Planeswalkers Promos 2012|
+PDP13|Duels of the Planeswalkers Promos 2013|
+PDP14|Duels of the Planeswalkers Promos 2014|
+PDRC|Dragon Con|
+PDTK|Dragons of Tarkir Promos|Khans of Tarkir
+PDTP|Duels of the Planeswalkers Promos 2009|
+PELD|Throne of Eldraine Promos|
+PELP|European Land Program|
+PEMN|Eldritch Moon Promos|Shadows over Innistrad
+PF19|MagicFest 2019|
+PF20|MagicFest 2020|
+PFRF|Fate Reforged Promos|Khans of Tarkir
+PG07|Gateway 2007|
+PG08|Gateway 2008|
+PGPX|Grand Prix Promos|
+PGRN|Guilds of Ravnica Promos|Guilds of Ravnica
+PGRU|Guru|
+PGTC|Gatecrash Promos|Return to Ravnica
+PGTW|Gateway 2006|
+PHEL|Open the Helvault|
+PHJ|Hobby Japan Promos|
+PHOP|Promotional Planes|
+PHOU|Hour of Devastation Promos|Amonkhet
+PHPR|HarperPrism Book Promos|
+PHUK|Hachette UK|
+PI13|IDW Comics 2013|
+PI14|IDW Comics 2014|
+PIDW|IDW Comics 2012|
+PISD|Innistrad Promos|Innistrad
+PJAS|Junior APAC Series|
+PJJT|Japan Junior Tournament|
+PJOU|Journey into Nyx Promos|Theros
+PJSE|Junior Series Europe|
+PKLD|Kaladesh Promos|Kaladesh
+PKTK|Khans of Tarkir Promos|Khans of Tarkir
+PLC|Planar Chaos|Time Spiral
+PLGM|DCI Legend Membership|
+PLNY|2018 Lunar New Year|
+PLPA|Launch Parties|
+PLS|Planeshift|Invasion
+PM10|Magic 2010 Promos|
+PM11|Magic 2011 Promos|
+PM12|Magic 2012 Promos|
+PM13|Magic 2013 Promos|
+PM14|Magic 2014 Promos|
+PM15|Magic 2015 Promos|
+PM19|Core Set 2019 Promos|
+PM20|Core Set 2020 Promos|
+PMBS|Mirrodin Besieged Promos|Scars of Mirrodin
+PMEI|Magazine Inserts|
+PMH1|Modern Horizons Promos|
+PMOA|Magic Online Avatars|
+PMPS|Magic Premiere Shop 2005|
+PMPS06|Magic Premiere Shop 2006|
+PMPS07|Magic Premiere Shop 2007|
+PMPS08|Magic Premiere Shop 2008|
+PMPS09|Magic Premiere Shop 2009|
+PMPS10|Magic Premiere Shop 2010|
+PMPS11|Magic Premiere Shop 2011|
+PNAT|Nationals Promos|
+PNPH|New Phyrexia Promos|Scars of Mirrodin
+POGW|Oath of the Gatewatch Promos|Battle for Zendikar
+POR|Portal|
+PORI|Magic Origins Promos|
+PPC1|M15 Prerelease Challenge|
+PPOD|Portal Demo Game|
+PPP1|M20 Promo Packs|Core Set
+PPRE|Prerelease Events|
+PPRO|Pro Tour Promos|
+PR2|Magic Player Rewards 2002|Magic Player Rewards
+PRED|Redemption Program|
+PREL|Release Events|
+PRES|Resale Promos|
+PRIX|Rivals of Ixalan Promos|Ixalan
+PRM|Magic Online Promos|
+PRNA|Ravnica Allegiance Promos|Guilds of Ravnica
+PROE|Rise of the Eldrazi Promos|Zendikar
+PRTR|Return to Ravnica Promos|Return to Ravnica
+PRW2|RNA Ravnica Weekend|Guilds of Ravnica
+PRWK|GRN Ravnica Weekend|Guilds of Ravnica
+PS11|Salvat 2011|
+PS14|San Diego Comic-Con 2014|
+PS15|San Diego Comic-Con 2015|
+PS16|San Diego Comic-Con 2016|
+PS17|San Diego Comic-Con 2017|
+PS18|San Diego Comic-Con 2018|
+PS19|San Diego Comic-Con 2019|
+PSAL|Salvat 2005|
+PSDC|San Diego Comic-Con 2013|
+PSLD|Secret Lair Promos|
+PSOI|Shadows over Innistrad Promos|Shadows over Innistrad
+PSOM|Scars of Mirrodin Promos|Scars of Mirrodin
+PSS1|BFZ Standard Series|Battle for Zendikar
+PSS2|XLN Standard Showdown|Ixalan
+PSS3|M19 Standard Showdown|
+PSUM|Summer of Magic|
+PSUS|Junior Super Series|
+PTC|Pro Tour Collector Set|
+PTG|Ponies: The Galloping|
+PTHS|Theros Promos|Theros
+PTK|Portal Three Kingdoms|
+PTKDF|Tarkir Dragonfury|Khans of Tarkir
+PUMA|Ultimate Box Topper|
+PURL|URL/Convention Promos|
+PUST|Unstable Promos|
+PVAN|Vanguard Series|
+PWAR|War of the Spark Promos|
+PWCQ|World Magic Cup Qualifiers|
+PWOR|Worlds|
+PWOS|Wizards of the Coast Online Store|
+PWP09|Wizards Play Network 2009|
+PWP10|Wizards Play Network 2010|
+PWP11|Wizards Play Network 2011|
+PWP12|Wizards Play Network 2012|
+PWPN|Wizards Play Network 2008|
+PWWK|Worldwake Promos|Zendikar
+PXLN|Ixalan Promos|Ixalan
+PXTC|XLN Treasure Chest|Ixalan
+PZ1|Legendary Cube Prize Pack|
+PZ2|Treasure Chest|
+PZEN|Zendikar Promos|Zendikar
+RAV|Ravnica: City of Guilds|Ravnica
+REN|Renaissance|
+RIN|Rinascimento|
+RIX|Rivals of Ixalan|Ixalan
+RNA|Ravnica Allegiance|Guilds of Ravnica
+ROE|Rise of the Eldrazi|Zendikar
+RQS|Rivals Quick Start Set|
+RTR|Return to Ravnica|Return to Ravnica
+S00|Starter 2000|
+S99|Starter 1999|
+SCG|Scourge|Onslaught
+SHM|Shadowmoor|Shadowmoor
+SLD|Secret Lair Drop Series|
+SOI|Shadows over Innistrad|Shadows over Innistrad
+SOK|Saviors of Kamigawa|Kamigawa
+V09|From the Vault: Exiled|
+SOM|Scars of Mirrodin|Scars of Mirrodin
+SS1|Signature Spellbook: Jace|
+SS2|Signature Spellbook: Gideon|
+STH|Stronghold|Tempest
+SUM|Summer Magic / Edgar|Core Set
+TBTH|Battle the Horde|Theros
+TD0|Magic Online Theme Decks|
+TD2|Duel Decks: Mirrodin Pure vs. New Phyrexia|
+TDAG|Defeat a God|Theros
+TFTH|Face the Hydra|Theros
+THB|Theros Beyond Death|
+THP1|Theros Hero's Path|Theros
+THP2|Born of the Gods Hero's Path|Theros
+THP3|Journey into Nyx Hero's Path|Theros
+THS|Theros|Theros
+TMP|Tempest|Tempest
+TOR|Torment|Odyssey
+TPR|Tempest Remastered|
+TSB|Time Spiral Timeshifted|Time Spiral
+TSP|Time Spiral|Time Spiral
+UDS|Urza's Destiny|Urza
+UGIN|Ugin's Fate|Khans of Tarkir
+UGL|Unglued|
+ULG|Urza's Legacy|Urza
+UMA|Ultimate Masters|
+UNH|Unhinged|
+USG|Urza's Saga|Urza
+UST|Unstable|
+V10|From the Vault: Relics|
+V11|From the Vault: Legends|
+V12|From the Vault: Realms|
+V13|From the Vault: Twenty|
+V14|From the Vault: Annihilation|
+V15|From the Vault: Angels|
+V16|From the Vault: Lore|
+V17|From the Vault: Transform|
+VIS|Visions|Mirage
+VMA|Vintage Masters|
+W16|Welcome Deck 2016|
+W17|Welcome Deck 2017|
+WAR|War of the Spark|Guilds of Ravnica
+WC00|World Championship Decks 2000|
+WC01|World Championship Decks 2001|
+WC02|World Championship Decks 2002|
+WC03|World Championship Decks 2003|
+WC04|World Championship Decks 2004|
+WC97|World Championship Decks 1997|
+WC98|World Championship Decks 1998|
+WC99|World Championship Decks 1999|
+WTH|Weatherlight|Mirage
+WWK|Worldwake|Zendikar
+XLN|Ixalan|Ixalan
+ZEN|Zendikar|Zendikar

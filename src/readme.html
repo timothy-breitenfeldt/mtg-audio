@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>MTG Audio Read me</title>
+</head>
+
+<body>
+<h1>Read me </h1>
+
+<ul style="list-style-type: None;">
+<li><a href="#introduction">Indroduction</a></li>
+<li><a href="#gettingStarted">Getting Started</a></li>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#folderStructure">Folder Structure</a></li>
+<li><a href="#userInterface">User Interface</a></li>
+<li><a href="#deck">deck</a></li>
+<li><a href="#zones">Zones</a></li>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#search">Search Database</a></li>
+<li><a href="#sshortcuts">Shortcut Keys</a></li>
+<li><a href="#noExicutable">Running without an Exicutable</a></li>
+<li><a href="#plannedImprovements">Planned Improvements</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h1>
+<p>This is a table top audio based magic the gathering game. No rules are enforced, that is up to the user, however, this application provides a platform for people to search for cards, build decks, and play magic as if you were playing with actual cards on the table. The goal of this project is to emulate playing a game of magic with actual cards, not to enforce rules. Magic the Gathering is a very complex game, and I try my best to distance my self from enforcing rules do to the complexity, which would take a multi person team to build and maintain.</p>
+<p>The game's interface should be easy to learn, but also includes a command line type interface for more advanced users. I strived to take the best of both worlds, to provide the user with the most ideal interface, and still keeping the project reasonably small. I used python to build this project, mainly because of the easy access to various open source libraries, and the ability to make the game cross platform.</p>
+<p>This program uses a library called mtgsdk which leverages the mtg API<br><br>
+<a href="http://magicthegathering.io/">http://magicthegathering.io/</a><br><br>
+This library pulls down all of the magic card data, and it is stored into a local sqlite3 database for easy access. The user can update the database by launching a an executable in the database folder, which will update the database. There is also an executable for rebuilding  the entire database, which will take some time. The executables  use  a command line interface for output.</p>
+<p> to provide cross platform speech output, mtg audio uses accessible_output2. This provides speech support for a veriety of screenreaders across windows, Mac, and linux. The most common screenreaders are accounted for,<br>
+JAWS, NVDA, SAPI, Voiceover, and ESpeak.<br>
+For a comprehensive list of supported screenreaders, go to:<br>
+<a href="https://pypi.org/project/accessible-output2/">accessible output 2</a></p>
+
+<h2 id="gettingStarted">Getting Started</h2>
+<p>This is a quick setup guide, not a comprehensive write up, please proceed to the following sections for more detail.<br>
+In the main directory of the mtg audio game folder, is the executable file mtg.exe. This will launch the application. when you first open the program, it will focus on the zone tree, which is a list box that contains the zones:<br>
+hand, Creatures, Lands, Other Spells, Graveyard, Exile, and Library.<br>
+After the name of each zone is the number 0, which is the number of cards in each zone. The zone tree is probably where you will spend most of your time. If you tab over, the next element is the command input box. This texstbox is used to input commands, which is just an alternative interface to using the zone tree. However, there are some things that you can do with commands that you can not do with the zone tree. Also, This is where you would type out your search queries to search for cards. If you tab one more time, you will find the output box, which just keeps a record of everything you do for reference.</p>
+<p>In the main directory of the program folder where you clicked on mtg.exe there is a folder called decks. This will contain all of the text files that represent your decks. To create a new deck, just create a new text file in a simple text editor like notepad on Windows, or Text Edit on Mac, and save it in your decks folder. In your new deck file, you can start writing down the name of each card that you want in your deck one per line, for example:<br><br>
+mountain<br>
+mountain<br>
+mountain<br>
+island<br>
+island<br>
+Storm Fleet Sprinter<br>
+etc...<br><br>
+To help in deck creation, a search engine has been built into the game. If you open mtg.exe, tab over to the command textbox, and type search followed by a space, you can type in the name of the card you want to lookup surrounded in quotes if the card name has spaces. The search engine will complete partially written words as long as you have the first letter or two correct.<br>
+Examples:<br>
+search negate    --    finds the card with the name of negate<br>
+search &ldquo;th in the i&rdquo;    -    finds the card thing in the ice<br>
+search &ldquo;storm f spri&rdquo;    -    finds the card storm fleet sprinter<br>
+The search engine can also search by color, converted mana cost, type, set, block, watermark, etc... If you are looking for more details on the search engine, scroll down to the section on the search command. Remember that all search values are case insesetive. More complicated examples are included below:<br><br>
+search text=flying color=u type=angel<br>
+This command will search for all cards with flying in the card text, is blue, and is of the type angel. This gave me 11 results.<br><br>
+search set=&ldquo;shadows over in&rdquo; color=r type=wolf cmc=2 text=haste
+This command will search for all cards in the set of Shadows Over Inastrad, that are red, has a type of wolf, a converted mana cost of 2, and includes haste in the card text.<br><br>
+search set=[ixalan] color=r|w|g type=dino
+this search command will find all cards in the set of Ixalan, but this specifys exactly those letters, and no more and no less, so sets like rivals of ixalan will not be included in the search, which would be the case if the brackets were not used. This command also specifys that the search results must have in their casting cost either red, blue, green, or any combonation there of. This will not prevent results that are black green, red white, etc... though. Finally the type argument is provided with a value of dino, which will likely return cards with a type of dinosaur.<br><br>
+As you can see, the search queries can get pretty complicated, refer to the search command section for more information.</p>
+<p>To load a deck, open the program and press CTRL+L, which will open a dialog to allow you to choose the deck you would like to use. Once you press enter, it will take a couple seconds to load and finally notify you when it is finished. You can now look at your deck in the program if you tab to the zone tree and scroll down to the bottom to your library. Press left and right errows to navigate through your cards. A short list of abreviated shortcut keys are included below. Note that a card must be selected for these keys to work.<br>
+<ul>
+<li>1 - speaks card mana cost</li>
+<li>2 - speaks power and toughness</li>
+<li>3 - speaks card text</li>
+<li>4- speaks card type</li>
+<li>5 - speaks card flavor text</li>
+<li>V - opens a window and displays all card propertys in text, navigatable by the errow keys.</li>
+<li>space - taps a card (if tapped, the word tapped is appended to the card name, if untapped, nothing is appended to the end of the name)</li>
+</ul>
+
+To shuffle, press ctrl+h, then press ctrl+shift+d to draw 7 cards, and to draw 1 card, press ctrl+d. Move back up to the top of the zone tree and and right and left errow to view the cards you drew. to move a card to the battle field, graveyard, exile, or back to the library from your hand, press:
+<ul>
+<li>enter - auto plays a card from a zone based on card type. If the card is a creature, it will move the card to the creatures zone, if land, it will be played in the lands zone, and if any other type, it will be moved to the other spells zone.</li>
+<li>shift+enter - will move the card to your hand</li>
+<li>ctrl+enter - moves a card to the library. Opens a menu to either move the card to the top, bottom, or other. If other is chosen, a dialog is opened to let you choose the index you would like to move your card to.</li>
+<li>backspace - moves a card to your graveyard</li>
+<li>shift+backspace - moves a card to exile</li>
+</ul>
+Finally, press CTRL+u to untap all cards on your battlefield. This should provide the basics needed to start playing. There are many other key commands and text commands that can make your experience even better. Read on to learn more.
+
+<h2 id="notes">Notes</h2>
+<p>While reading through this manual, and interpreting the errors in the game for invalid commands, the folloing style formatting is used.<br>
+Commands will always be shown in quotations, but do not include the quotations in the command when you go to type the text into the command box. All commands are parsed by spaces. The format is: the command is given, then the arguments, all seperated by spaces. For example,<br>
+&ldquo;view hand&rdquo;<br>
+shows the command &ldquo;view&rdquo; and the argument &ldquo;hand&rdquo;, which is a zone. Zones are areas where cards can be placed. A list of the zones and the associated commands that can be used to refference a specific zone can be found in the Zones section of this manual. A command is often represented by giving the command followed by a sequence of words all in brackets. All words wrapped in brackets are arguments, which just means that is the place where you will input the zone, card, or quantity. if an asterisk or (*) is found before an argument, it means that the argument is optional.</p>
+<p>for example, to view a zone or card, you must use the view command<br>
+&ldquo;view *[zone] *[card]&rdquo;<br>
+This command has two optional arguments since there is a star in front of both arguments. Also, note that any arguments that are plural, followed by an elipsis means that 1 or more arguments can be given.</p>
+<p>The program will ignore all extra spaces and capitalizations in a command, as long as the command and arguments are preserved. One thing to remember is that if you are typing the name of something that has spaces, you must put quotation marks around the text, since the game can only tell one argument apart from another by spaces, names can cause a problem. So, if you are wanting to view &ldquo;Geier Reach Bandit&rdquo; you must use a similar sintax:<br>
+&lsquo; view hand &ldquo;Geier Reach Bandit&rdquo; &rsquo; You can use either single or double quotes.</p>
+<p>When moving cards from one location to another, weather using the move draw, mil, or any other commands that may be created to move cards, the card or cards added to the destination zone will be added to the top of the list, except in the land zone case, since the lands are auto sorted to group like names together, and the draw command, which will move a card or cards from the library to your hand, and sort by , converted mana cost, type, and then color.</p>
+<p>The last thing to note is that cards can be referenced to by name or by index. The index is the location in the zone that the card is currently at. When you view all the cards in a zone, the index is printed next to the cardname, so instead of<br>
+&ldquo;view hand Negate"&rdquo;<br>
+You can type<br>
+&ldquo;view hand 1&rdquo;<br>
+asuming that Negate is index 1. This provides a means of accessing cards without needing to reference the card directly by name, which can be hard do to the complicated spelling of card names. Anywhere you see the argument [card], you may either provide a name, or an index to refer to that card.</p>
+
+<h3 id="folderStructure">Folder Structure</h3>
+<p>There are a couple folders in the main game folder that you should be aware of. The decks folder, is where you should include all of your decks. Your decks are text files that should contain a list of card names. For more, see the decks section. The other folder you should know is the database folder. in this folder, is a mtg.db file, which is the database itself that the game depends on, a folder called resources, an executable called buildDatabase, and an executable called updateDatabase. Clicking on buildDatabase will pull up a commandline interface that will be used to display the progress as the entire database is rebuilt from the ground up. This process will take several minutes. To just update the database, you can click on the updateDatabase executable, which will take significantly less time to check if there are any missing sets from the local database. There should be three files in resources, setCounter.txt, cardID.txt, and sets.txt. Do not change any of these files, they are used for createing and updating the database. the setsCounter, contains the running total number of sets in the database, and the cardID, provides the total number of cards in the database. These files are used to keep track of these to provide id's in the database tables. The sets file contains a list of all of the sets in the database. It is formatted by:<br>
+id|setName|blockName<br>.
+Do not manually edit this file, but it is useful to use to get spellings of sets or blocks.</p>
+
+<h3 id="userInterface">User Interface</h3>
+<p>The user interface is comprised of a listbox that is refered by as the zone tree, and two text boxes. The zone tree is a list of all of the zones, hand, lands, creatures, other spells, graveyard, exile, and library, and when you press left or right errow on a zone, it will read the cards in that zone. The editable textbox is a single line box that takes your commands, where the second box is a read only box for all of the output text. Most of your time will be spent in the zone tree, but if you need to use the search command, or want to perform a more spacific task, then you will sometimes use the command input box.</p>
+<p>The zone tree supports the standard keyboard navigation for listboxes, where up and down errow will navigate through each zone, home and end wil take you to the beginning and end of the list respectively, and pressing a letter will navigate to an item in the list that starts with that letter. the number of cards in the selected zone is appended to the end of the zone name for convenients. When cards are in a zone, you can navigate through each card by pressing left and right errows, and control+left errow will navigate to the first card on the far left, where control+right will navigate to the end of the card list on the far right.</p>
+<p>When you type in a command into the command input box the currently running screenreader will speak the output while your focus is still in the command input box. If you tab, all aditional commands except for the first will dump the cursor at the beginning of the new output text. from the output box, you can start typeing with out having to tab, and it will change focus for you and immediately start typing characters into the command input box. If you press up or down errow, you can cycle through up to your last 50 commands you have given. Press up errow to get your previous commands, and down errow to cycle back through those commands all the way down to a blank input box.</p>
+
+<h3 id="deck">Deck</h3>
+<p>The deck is constructed in a text file in the folder &ldquo;decks&rdquo; folder, where the exicutable is located. You may create as many files as you wish in this folder and call your files what ever you want, however, you may only load text files. Programs such as notepad on Windows, or text edit on mac are used for this purpose. You can save a text file in microsoft word, but it is possible you may get strange behavior because microsoft word may include aditional characters that are not visible that could cause problems. In your text file, you need to include the exact spelling of all of the cards you would like in your deck seperated by newlines. The program will help a little, all capitalization will be ignored, otherwise your spelling and grammar must be perfect to insure that the card you want is the first result in the search for that card name. It takes a couple seconds to load the deck when a deck is loaded, so be patient. This is an issue that will hopefully be addressed in the future.</p>
+<p>To insert comments into the deck files, use two forward slashes //, to comment out a single line, and /* */ for a multi line comment. these are C style comments, so any programmers should be familiar with this comment style. Examples are below.<br><br>
+negate<br>
+thing in the ice<br>
+//this is a single line comment that will not be read as a card name.<br>
+grasp of darkness<br>
+/*<br>
+this is a multi line comment.<br>
+All text between these symbols will be ignored.
+*/<br><br>
+You may want to use comments for organizing your deck file, or for using a side board.</p>
+
+<h3 id="zones">Zones</h3>
+<p>The zones in this game are all of the locations that cards can be moved to. You have the freedom to move cards from one zone to another using the provided commands below. I have provided variants on the zone names, to make it faster to type.</p>
+<p>Note: it is recommended to use the zones for there purpose since there are some reinforcements of card placement. This just means, don't use the creature zone for your graveyard, your exile zone for your deck, or any other strange behavior like that. If you do, a lot of the commands, such as play, discard, mill, attack, etc... are performing actions specific to a zone with the asumption that you are using that zone for its intended purpose, so it will perform those actions accordingly and mess up your board.</p>
+<p>When moving cards from one zone to another, it is set to clear all status properties before adding the card into the new zone. This means that tapped cards are untapped, transformed cards are flipped, etc...</p>
+<p>The zones are: library, hand, exile, graveyard, creatures, lands, and otherSpells. The variants to these commands are listed below.</p>
+
+<table>
+<tr>
+<th>Zone</th> <th>Description</th>
+</tr>
+<tr>
+<td>library, lib</td> <td>This is the zone where your library is stored, when you first load a deck, the deck is loaded into this zone.</td>
+</tr>
+<tr>
+<td>exile, exl</td> <td>This is where you should put your exiled cards</td>
+</tr>
+<tr>
+<td>graveyard, grave, grv, gr</td> <td>This is where you should put cards that are supposed to go in your graveyard.</td>
+</tr>
+<tr>
+<td>hand, hnd</td> <td>This is the zone where you keep the cards that are in your hand</td>
+</tr>
+<tr>
+<td>creatures, creature, crt, cr</td> <td>This zone is used to keep your creatures that are on the battlefield.</td>
+</tr>
+<tr>
+<td>lands, land, lnd</td> <td>This zone is used to store your lands. This zone auto sorts the cards here so that lands with the same name are grouped together.</td>
+</tr>
+<tr>
+<td>otherSpells, other, othr, oth</td> <td>This zone is used for all other spells that are not accounted for.</td>
+</tr>
+</table>
+
+
+<h3 id="commands">Commands</h3>
+<p>There are several variants on most of the commands, this is to help make it easier for the user to remember, and to improve efficiency. You don't need to memmorize all of the variants, just pick one and stick with it. The variants of the commands are listed next to the most recognisable command under the command column.</p>
+
+<table>
+<tr>
+<th>Command</th> <th>Format</th> <th>Description</th>
+</tr>
+<tr>
+<td>load</td> <td>&ldquo;load [deckName.txt]&rdquo;</td> <td>This command is used to load your deck, which is stored in the decks folder. The argument [deckName.txt] is the name of your deck inside the decks folder. you must include the file extention. See the deck section to learn how to create a deck file.</td>
+</tr>
+<tr>
+<td>move, mv</td> <td>&ldquo;move [startingZone] *[cards]... [destinationZone]&rdquo;</td> <td>The move command is used to move cards, given by either name or index, from a starting zone, [startingZone], to a destination zone, [destinationZone]. The [card] argument is optional because it is possible to pass in just a starting zone and a destination zone, which will move all of the contents of one zone to another. However, it is possible to move one or many cards given a a set of indicies or names. Note that cards are just seperated by space, do not add any type of seperator such as a cama. If you move a card from a zone to the same zone, it will append the card to the end of the zone list.</td>
+<td>view, vw</td> <td>&ldquo;view *[zone] *[card]&rdquo;</td> <td>This command is used to view a card or zone depending on how many arguments you provide. [zone] is the zone you would like to look in, and [card] is the spesific card you would like to look at. If Viewing the contents of a zone, only the card names and indicies are printed to the screen, if you want more information about the card printed, see the viewinfo command. When viewing a card, a new window is opened to show the card properties, you may press escape to close this window. If no arguments are provided, it will view your battlefield, which includes your creatures, lands, and other spells. Note that you can not provide the card argument without the zone argument, but you can include the zone with out a card.</td>
+</tr>
+<tr>
+<td>viewinfo, vwi</td> <td>&ldquo;viewinfo *[zone] *[card]&rdquo;</td> <td>This command is almost identical to the view command, however rather than just printing the card index and card name, the card's manacost and power and toughness are included where applicable. For completeness, it is still possible to view a card using the viewinfo command, even though the results are no different than if you were using view. For more information about the viewinfo command, see the last entry on view.</td>
+</tr>
+<tr>
+<td>tap, tp</td> <td>&ldquo;tap *[zone] *[cardsToTap]...&rdquo;</td> <td>This command is used to tap a card. Tapped cards show up by appending the word tapped to the end of a card name, a card is untapped if it does not say tapped. If you type tap by itself, it will tap all cards on the battlefield (creatures, lands, and otherSpells). If a zone is provided, zone [zone] as an argument, it will tap all cards in that zone. If you provide a card or cards in adition to a zone, it will tap all given cards, either by index or name. You can not have a card with out including a zone in the command.</td>
+</tr>
+<tr>
+<td>untap, untp</td> <td>&ldquo;untap *[zone] *[cardsToTap]...&rdquo;</td> <td>This command is used to untap a card. Tapped cards show up by appending the word tapped to the end of a card name, a card is untapped if it does not say tapped. If you type untap by itself, it will untap all cards on the battlefield (creatures, lands, and otherSpells). If a zone is provided, zone [zone] as an argument, it will untap all cards in that zone. If you provide a card or cards in adition to a zone, it will untap all given cards, either by index or name. You can not include a card without a zone in the command.</td>
+</tr>
+<tr>
+<td>draw, dr</td> <td>&ldquo;draw *[quantity]&rdquo;</td> <td>This command is used to make moving cards from your library to your hand easier. Since it is an action that is done a lot, it seemed inefficient to use the move command to draw cards. This command takes only 1 optional argument. If no arguments are provided, 1 card will be drawn, if an argument is given, it must be a number to specify the number of cards to draw.</td>
+</tr>
+<tr>
+<td>mill, mll, ml</td> <td>&ldquo;mill *[quantity]&rdquo;</td> <td>This command is used to make moving cards from your library to your graveyard easier. Since it is an action that is done a lot, it seemed inefficient to use the move command to mill cards. This command takes only 1 optional argument. If no arguments are provided, 1 card will be milled, if an argument is given, it must be a number to specify the number of cards to mill.</td>
+</tr>
+<tr>
+<td>discard, dsc, ds</td> ><td>&ldquo;discard [cards ... &rdquo;</td> <td>This command is used to move a set of given cards from your hand to the graveyard. This is used to simplify the move command since it is a commonly performed action. You can provide cards as either an index, or a card name.</td>
+</tr>
+<tr>
+<td>shuffle, shfl</td> <td>&ldquo;shuffle *[zone]&ldquo;</td> <td>This command is used to shuffle the cards in a given zone. It is not limitted to just the library to allow for as much user flexibility as possible. If only shuffle is given as a command, it will shuffle your library, otherwise, you can specify a zone to be hsuffled.</td>
+</tr>
+<tr>
+<td>transform, tran, trans, trnf</td> &ldquo;transform [zone] [card]&ldquo;</td> <td>This command is used to flip a card over if it has a back side. All doublefaced cards are considered to be a transformation, including merge cards, which for the sake of ease, the mergers are all cards that transform into the same thing. If you attempt to transform a card that can not be flipped, an error will be thrown.</td>
+</tr>
+<tr>
+<td>swap, swp</td> <td>&ldquo;swap [zone] *[zone2] *[card1] *[card2]&ldquo;</td> <td>This command will swap the position of two cards in a given zone if four arguments are given. Keep in mind that zones such as your hand or lands auto sort cards, so swapping in either of these zones is pointless. If only three arguments are given, the third argument is expected to be a zone to swap the contents of zones with each other. So if you wanted to move all cards from your hand to your exile, and your exile to your hand, then<br>swap library hand<br> would do it.</td>
+</tr>
+<tr>
+<td>cleanup, clean, cln</td> <td>&ldquo;cleanup&rdquo;</td> <td>This command is used to clean up the zones, and reset the game back to the default, which is your entire library located in the library zone.</td>
+</tr>
+<tr>
+<td>play, pl</td> <td>&ldquo;play [cards]... *[zone]&rdquo;</td> <td>This command is used to simplify the move command from your hand to the battlefield. You can move cards in your hand, either by index or name, to a spasific zone, or to a auto chosen zone based on card type. Given a set of cards, and a zone, you can move cards from your hand to that zone. If you don't include a zone in the command, though, it will try to pick which zone to put which card based on card type. If a card has creature somewhere in its type, it will be moved to the creatures zone, if it has land in its type, it will be moved to the lands zone, if it has sorcery or instant in its type, it will be moved straight to your graveyard, and finally, all other card types will be put into your otherSpells zone.</td>
+</tr>
+<tr>
+<td>attack, atk</td> <td>&ldquo;attack *[cardsToAttackWith]...&rdquo;</td> <td>This command is used for simplifying the tap command. Given just the command attack, it will attack with everything in your creatures zone, tapping everything in creatures. You can provide a list of indicies or names that are located in your creatures zone to the attack command, and it will tap all of those cards. This command is spacific to the creature zone since you will only attack with creatures.</td>
+</tr>
+<tr>
+<td>sort</td> <td>&ldquo;sort [zone] *[cardProperties]...&rdquo;</td> <td>This command is used to sort a zone. You must provide a zone to sort. The last argumetn is a list of card properties to sort by. You can use any combonation of these arguments:  (manaCost, mc, color), (convertedManaCost, )cmc), type, text, power, toughness, set, block</td>
+</tr>
+<tr>
+<td>token, tk</td> <td>&ldquo;token [zone: creatures|lands|other] [cardName] *[type=tokenType] *[pt=power/toughness *[text=tokenText]&rdquo;</td> <td>This command is used to create tokens. The token does not have to be a creature. By default, type is set to token,, power and toughness, and text are set to none. Note that the zone given must be either creatures, lands, or other spells. When you move a token out of a zone it is deleted, so be wary when moving tokens. A name is required, though.
+</tr>
+<tr>
+<td>addcounters, addcounter, addcount, counter+, counters+, count+</td> <td>&ldquo;addcounters [zone] [card] [number of counters]&rdquo;</td> <td>this command will add a given number of counters to a specified card. The first argument is the zone, the second is the card index, and the third is the number of counters to be added to the card. Note, you are not setting the number of counters, you are adding to the existing counters on that card.</td>
+</tr>
+<tr>
+<td>subtractcounters, subtractcounter, subcounters, subcounter, subcount, subcounts, counter-, counters-, count-</td> <td>&ldquo;subtractcounters [zone] [card] [number of counters]&rdquo;</td> <td>this command will subtract a given number of counters from a specified card. The first argument is the zone, the second is the card index, and the third is the number of counters to be subtracted from the card. Note, you are not setting the number of counters, you are subtracting from the existing counters on that card.</td>
+</tr>
+<tr>
+<td>addplus1counters, addplus1counter, addpluscounters, addplusCounter, plus1counters+, plus1counter+, plusCounters+, pluscounter+</td> <td>&ldquo;addplus1counters [zone] [card] [number of counters]&rdquo;</td> <td>this command will add a given number of plus 1 counters to a specified card. The first argument is the zone, the second is the card index, and the third is the number of plus 1 counters to be added to the card. Note, you are not setting the number of counters, you are adding to the existing counters on that card.</td>
+</tr>
+<tr>
+<td>subtractplus1counters, subtractplus1counter, subtractpluscounters, subtractplusCounter, plus1counters-, plus1counter-, plusCounters-, pluscounter-</td> <td>&ldquo;subtractplus1counters [zone] [card] [number of counters]&rdquo;</td> <td>this command will subtract a given number of plus 1 counters from a specified card. The first argument is the zone, the second is the card index, and the third is the number of plus 1 counters to be subtracted from the card. Note, you are not setting the number of counters, you are subtracting from the existing counters on that card.</td>
+</tr>
+<tr>
+<td>addminus1counters, addminus1counter, addminuscounters, addminusCounter, minus1counters+, minus1counter+, minusCounters+, minuscounter+</td> <td>&ldquo;addminus1counters [zone] [card] [number of counters]&rdquo;</td> <td>this command will add a given number of minus 1 counters to a specified card. The first argument is the zone, the second is the card index, and the third is the number of minus 1 counters to be added to the card. Note, you are not setting the number of counters, you are adding to the existing counters on that card.</td>
+</tr>
+<tr>
+<td>subtractminus1counters, subtractminus1counter, subtractminuscounters, subtractminusCounter, minus1counters-, minus1counter-, minusCounters-, minuscounter-</td> <td>&ldquo;subtractminus1counters [zone] [card] [number of counters]&rdquo;</td> <td>this command will subtract a given number of minus 1 counters from a specified card. The first argument is the zone, the second is the card index, and the third is the number of minus 1 counters to be subtracted from the card. Note, you are not setting the number of counters, you are subtracting from the existing counters on that card.</td>
+</tr>
+<tr>
+<td>search</td> <td>&ldquo;search *[cardName] *[cardProperties]...&rdquo;</td> <td>This is used to search the local database that is packaged with this game. You do not need internet to run this command.<br>note: All given search values ignore capitalization, and if your property has spaces,and you did not complete the words, the program will try to find all matches with the given string putting variables at the beginning, end, and everywhere there is a space. This will insure that a search for the card &ldquo;geier reach bandit&rdquo; will also work if given &ldquo;geie rea bandit&rdquo;.<br>the first argument is a cardName, if you are searching for a spacific card by card name, you  must include it directly after the search command. See the search database section for more about this command.</td>
+</tr>
+</table>
+
+<h3 id="search">Searching the Database</h3>
+<p>This is used to search the local database that is packaged with this game. You do not need internet to run this command.<br>
+note: All given search values ignore capitalization, and if your property has spaces,and you did not complete the words, the program will try to find all matches with the given string putting variables at the end and everywhere there is a space. This will insure that a search for the card &ldquo;geier reach bandit&rdquo; will also work if given &ldquo;geie rea bandit&rdquo;.<br>
+the first argument is a cardName, if you are searching for a spacific card by card name, you must include it directly after the search command. You can include other search parameters after the card name if you wish.<br>
+The order of the properties does not matter, you can provide them in any order you wish.<p>
+<p>The card properties are the same as those used to sort with minus the card name.<br>
+Properties to search by:<br>
+(manaCost, mc, color), (convertedManaCost, cmc), type, text, power, toughness, (watermark, water, wm), set, block</p>
+<p>the card property must be directly followed by an equals sign to provide the value for that property.<br>
+&ldquo;search &ldquo;mardu&rdquo; set=&ldquo;Khans of Tarkir&rdquo;&rdquo;<br>
+This will search for all cards in the Khans of Tarkir set for cards that have &ldquo;mardu&rdquo; somewhere in the card name regardless of capitalization. Note that you can not put a space before or after the = (equals) sign because it will treat the equals sign and the surrounding text all as seperat arguments if you do, and it will throw an error.</p>
+<p>Note that you can give multiple flags to help your search where it makes sence. For example, you could give a text flag saying draw 1 and a second text flag for flying, with a type of creature. This will search for the keywords draw 1, somewhere in the card text, and for flying somewhere in the card text too for all cards of type creature.<br>
+This is helpful because if you just said<br>
+&ldquo;draw 1, flying&rdquo;<br>
+The program will look for all insinces in a card's text where it says draw 1, flying, which is probably none. So, you can look for many different keywords that could be located anywhere in the card text by using multiple text flags.<br>
+For example:<br>
+&ldquo;search text=&ldquo;draw 1&rdquo; text=&ldquo;flying&rdquo; type=&ldquo;creature&rdquo;&rdquo;<br>
+You can also search for hybrid colored cards with multiple color flags. For example:<br>
+&ldquo;search color=u color=r type=&ldquo;instant&rdquo;&rdquo;<br>
+will find all blue red cards that are instances.<br>
+You must remember that setting multiple flags is using the &ldquo;and&rdquo; operator, so using multiple color flags or text flags makes sence, but using multiple set or block flags does not since a card is only ever apart of one set. This is technically not true, however if a card is from multiple sets, more than one instance of that card is in the database, so a card is not actually apart of more than one set or block at the same time. Perhaps this will be addressed in the future, but it is not a priority.</p>
+<p>Only 400 results can be displayed at a time, so if your search results exceed 400, the results to be displayed will be truncated down to 400. This limitation is due to wx python's text control wigit only allowing so many characters in the text box at any given time. This is 
+an issue that is not a priority to fix since I feel that few people will ever want to look through more than 400 cards at any given time.</p>
+<p>Aditional search sintax for better results:<br>
+brackets [] - used for identifying exact text that you don't want to be misconstrued. For example, if you search for set=ixalan, it will return back cards from the Ixalan set, as well as rivals of ixalan. To avoid this, you can wrap your value ixalan in brackets so that it will search for exact text and not place wild card variables at the end of each word. Note that you can not wrap individual words in brackets, only entire values. If you try to wrap a word in brackets you will get an error or no results. Also note that capitalization still does not matter, only spelling.<br>
+Example:<br>
+&ldquo;search set=&ldquo;[ixalan]&rdquo;&rdquo;<br>
+or operator | - you can use the | (verticle bar) character, shift+backslash, to specify an or operation. So, if you want to search for multiple sets at the same time, type ixalan|shadows over innistrad, and it wil return all cards from ixalan or shadows over innistrad. The or operator can be used with any card property, such as block, color, etc... You can still use brackets around exact strings.<br>
+example:<br>
+&ldquo;search block=&ldquo;[ixalan]|shadows over innistrad&rdquo; type=creature color=u|r cmc=1|2|3&rdquo;<br>
+This query will find all cards that are in the ixalan block or the shadows over innistrad block that are red or blue creatures with a converted mana cost of 1, 2, or 3.</p>
+<p>It is also possible to search for hybrid colors using 1 color flag. just say something like color=urb, which will search for red, blue, or black cards. The order of colors does not matter.<br>
+example:<br>
+&ldquo;search set="shadows over innistrad" color=rb type=creature&rdquo;<br>
+This will search for all red black creatures in the Shadows over Innistrad set.</b>
+
+<h3 id="sshortcuts">Shortcut Keys</h3>
+<p>there are several keyboard shortcuts to assist in efficiently performing different tasks that would normally need to be done through writing out the command. some keystrokes can only be pressed if certain conditions are met, such as if you have a card selected in the zone tree.</p>
+
+<h4>Global Shortcuts</h4>
+<table>
+<tr>
+<th>Action</th> <th>Key Stroke</th> <th>Description</th>
+</tr>
+<tr>
+<td>Show a dialog that lists all of the decks to load, and run the load command with the chosen deck.</td> <td>CTRL+L</td> <td>This is used for loading decks. This dialog contains three elements, a list box containing the decks to load, an Ok button, and a Cancel button. You can also choose the deck by pressing enter in the list box on the chosen deck</td>
+</tr>
+<tr>
+<td>scroll through speech output</td> <td>pageup/pagedown</td> <td>scroll through the screenreader output, pagedown, scrolls forward, and pagedown scrolls back.</td>
+</tr>
+<tr>
+<td>shuffle library</td> <td>CTRL+H</td> <td>Will shuffle the library.</td>
+</tr>
+<tr>
+<td>Draw a card</td> <td>CTRL+D</td> <td>Move a card from the library to hand.</td>
+</tr>
+<tr>
+<td>Draw 7 cards</td> <td>CTRL+SHIFT+D</td> <td>Move 7 cards from the library to hand.</td>
+</tr>
+<tr>
+<td>Untap all</td> <td>CTRL+U</td> <td>Untaps all cards in the creatures, lands, and other spells zones.</td>
+</tr>
+<tr>
+<td>create Token Dialog</td> <td>CTRL+K</td> <td>Opens a dialog to create a token. The focus is first on a list of zones the token be created in, the next element is a list of the number of tokens to create, then a textbox for the token name, then a box for the token type, followed by one after the other power and toughness, and finally a textarea for the card text. There is also an OK and Cancel button. By default, the token name and token type are token, even if all of the fields are left blank. the remaining fields are not esential,so power, toughness, and card text can be left blank and no default is provided.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view hand&rdquo;</td> <td>CTRL+1</td> <td>Cards are printed to the screen from your hand including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo hand&rdquo;</td> <td>CTRL+SHIFT+1</td> <td>Cards are printed to the screen from your hand including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view lands&rdquo;</td> <td>CTRL+2</td> <td>Cards are printed to the screen from lands including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo lands&rdquo;</td> <td>CTRL+SHIFT+2</td> <td>Cards are printed to the screen from lands including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view creatures&rdquo;</td> <td>CTRL+3</td> <td>Cards are printed to the screen from creatures including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo creatures&rdquo;</td> <td>CTRL+SHIFT+3</td> <td>Cards are printed to the screen from creatures including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view other&rdquo;</td> <td>CTRL+4</td> <td>Cards are printed to the screen from other spells including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo other&rdquo;</td> <td>CTRL+SHIFT+4</td> <td>Cards are printed to the screen from other spells including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view graveyard&rdquo;</td> <td>CTRL+5</td> <td>Cards are printed to the screen from your graveyard including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo graveyard&rdquo;</td> <td>CTRL+SHIFT+5</td> <td>Cards are printed to the screen from your graveyard including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view exile&rdquo;</td> <td>CTRL+6</td> <td>Cards are printed to the screen from your exile including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo exile&rdquo;</td> <td>CTRL+SHIFT+6</td> <td>Cards are printed to the screen from your exile including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;view library&rdquo;</td> <td>CTRL+7</td> <td>Cards are printed to the screen from your library including indicies and card names.</td>
+</tr>
+<tr>
+<td>Run the command &ldquo;viewinfo library&rdquo;</td> <td>CTRL+SHIFT+7</td> <td>Cards are printed to the screen from your library including indicies, card names, mana costs, and power/toughness.</td>
+</tr>
+</table>
+
+<h4>Zone Tree Keys</h4>
+<table>
+<tr>
+<th>Action</th> <th>Key Stroke</th> <th>Description</th>
+</tr>
+<tr>
+<td>Play Card</td> <td>ENTER</td> <td>Will Auto move a card into the correct zone based on the cards' type from any zone. If the card is a creature, the card will be moved to the creatures zone, if the card is a land, it will be placed in the lands zone, and if the card is of any other type, it will be placed into the other spells zone.</td>
+</tr>
+<tr>
+<td>Move card to Graveyard</td> <td>BACKSPACE</td> <td>Will move a card from any zone to your graveyard.</td>
+</tr>
+<tr>
+<td>Move card to Exile</td> <td>SHIFT+BACKSPACE</td> <td>Move a card to your exile from any zone.</td>
+</tr>
+<tr>
+<td>Move card to Hand</td> <td>SHIFT+ENTER</td> <td>Move a card to your hand from any zone</td>
+</tr>
+<tr>
+<td>Move card to Library</td> <td>CTRL+ENTER</td> <td>Move a card to your library from any zone. A menu is brought up which gives the options to move to top, bottom, or other. If you click on other, it will bring up a dialog which contains a list of indicies to which you could move the card to, up to the number of cards in the deck. An OK and Cancel button are provided as well.</td>
+</tr>
+<tr>
+<td>Speak card Mana cost</td> <td>1</td> <td>Speak the currently selected card's mana cost.</td>
+</tr>
+
+<tr>
+<td>Speak card power and toughness</td> <td>2</td> <td>Speak the currently selected card's power and toughness.</td>
+</tr>
+<tr>
+<td>Speak card text</td> <td>3</td> <td>Speak the currently selected card's text.</td>
+</tr>
+<tr>
+<td>Speak card type</td> <td>4</td> <td>Speak the currently selected card's type.</td>
+</tr>
+<tr>
+<td>Speak card flavor text</td> <td>5</td> <td>Speak the currently selected card's flavor text.</td>
+</tr>
+<tr>
+<td>Speak card rarity</td> <td>6</td> <td>Speak the currently selected card's rarity.</td>
+</tr>
+<tr>
+<td>Speak card rulings</td> <td>7</td> <td>Speak the currently selected card's rulings.</td>
+</tr>
+<tr>
+<td>Speak card printings</td> <td>8</td> <td>Speak the currently selected card's printings.</td>
+</tr>
+<tr>
+<td>Speak card watermark</td> <td>9</td> <td>Speak the currently selected card's watermark.</td>
+</tr>
+<tr>
+<td>Speak card loyalty</td> <td>0</td> <td>Speak the currently selected card's loyalty.</td>
+</tr>
+<tr>
+<td>View card</td> <td>V</td> <td>Opens a new window which contains all of the card properties layed out in text.</td>
+</tr>
+<tr>
+<td>Transforms a card</td> <td>CTRL+T</td> <td>Transforms a selected card if able</td>
+</tr>
+<tr>
+<td>tap a card</td> <td>SPACEBAR</td> <td>Tap a selected card.</td>
+</tr>
+<tr>
+<td>Add regular counter to card</td> <td>&gt;</td> <td>Add a regular counter to the selected card.</td>
+</tr>
+<tr>
+<td>Subtract regular counter from card</td> <td>&lt;</td> <td>Subtract a regular counter from the selected card.</td>
+</tr>
+<tr>
+<td>Add plus 1 counter to card</td> <td>CTRL+&gt;</td> <td>Add a plus 1 counter to the selected card.</td>
+</tr>
+<tr>
+<td>Subtract plus 1  counter from card</td> <td>CTRL+SHIFT+&gt;</td> <td>Subtract a plus 1  counter from the selected card.</td>
+</tr>
+<tr>
+<td>Add minus 1 counter to card</td> <td>CTRL+&lt;</td> <td>Add a minus 1 counter to the selected card.</td>
+</tr>
+<tr>
+<td>Subtract minus 1  counter from card</td> <td>CTRL+SHIFT+&lt;</td> <td>Subtract a minus 1  counter from the selected card.</td>
+</tr>
+</table>
+
+<h4>Card Window Keys</h4>
+<p>The window that is opened when you either view a card, or search for cards, is a completely seperat window from the game application, and contains only a textarea with the card information.</p>
+<table>
+<tr>
+<th>Action</th> <th>Key Stroke</th> <th>Description</th>
+</tr>
+<tr>
+<td>navigate to next card</td> <td>TAB</td> <td>Navigates the cursors focus to the start of the next card's info. The cursor is placed on the next card name, and that card name is spoken aloud.</td>
+</tr>
+<tr>
+<td>navigate to previous card</td> <td>SHIFT+TAB</td> <td>Navigates the cursors focus to the start of the previous card's info. The cursor is placed on the previous card name, and that card name is spoken aloud.</td>
+</tr>
+</table>
+
+<h3 id="noExicutable">Running with out an Exicutable</h3>
+<p>If you don't plan on running this game with out an exicutable, you can skip this section.</p>
+<p>The game was constructed in python 3.4, and depends on accessible_output2 and wx python. These libraries may have other unmentioned dependencies that may need to be installed to get these libraries to work.</p>
+<p>Installations:<br>
+You must install python 3.4, which you can go to<br><br>
+<a href="www.python.org">www.python.org</a><br><br>
+to find the python 3.4 download. I was unable to get accessible_output2 working with higher versions of python, so we are stuck for now at python 3.4.</p>
+<p>the next thing to install is pywin32 for python 3.4. this is a requirement for accessible_output2.
+The other two dependencies for accessible_output2 are already included in the main directory of the program: libloader, and platform_utils</p>
+<p>The last step is to install wx python. The easiest way is to use a program built into python called pip, which is used to install libraries.
+Open a command prompt: press windows+R
+type cmd into the run dialog and press enter
+once the command prompt opens, type, or copy and paste the command:
+python -m pip install wxpython
+and press enter 
+Note: if you have other versions of python running already, python may not install wx python to python 3.4.
+Optionally, you can download wx python as an exicutable, but it is not recommended since pip insures you get the correct version.</p>
+<p>Finally, to run the game, navigate to the main folder for the game, and press enter on mtg.py. This should open the game if you did not have any previous versions of python installed before, or if you did not change how python files are opened.
+If the game is not opened, open a command prompt window in that directory by pressing alt+d in that directory in file explorer and type cmd and enter.
+then type:
+python mtg.py
+again, if you have other python versions installed, this may not work. Consult the python manual on how to deal with installing multiple versions of python at the same time.</p>
+
+<h3 id="plannedImprovements">Planned Improvements</h3>
+<p>I hope to include commands to keep track of life, and energy on cards. Also, I want to account for being able to pair cards for things like enchantment auras or equipment. I would also like to see an undo feature for undoing the last command, which the game is currently constructed to handle this, the code to undo for each action just needs to be written.<br>
+The ultimate goal for me is to implement a networking feature allowing users to connect to eachother and play magic online. This will take a lot of time,.</p>
+
+</body>
+</html>
